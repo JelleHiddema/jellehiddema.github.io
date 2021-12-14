@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>McDonald's burgerrating</title>
+        <meta name="description" content="Test">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png">
+</head>
+<body>
+
+<a href=site.html><h1><center>McDonald's menurating</center></h1></a>
+       
+<ul>
+  <li><a href="site.html">Home</a></li>
+  <li><a href="menu.html">Menu</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#over ons">Over ons</a></li>
+  <li><a class="active" href="Burgertest.html">Burgertest</a></li>
+</ul>
+    
+<script language="javascript">
+
+var Quest = new Array(10);  //this sets up an array for all of the answers that are given
+
+function populate() {
+// alert("function populate started");
+// this function gives each of the answers 0 points so if someone doesn't answer a question
+// the whole thing will continue to work
+  for(var i=0; i<10; i++) { Quest[i]=0; }
+}
+
+function total() {
+// alert("function total started");
+// this function adds the number of points each answer is worth together
+  myScore=0;
+  for (var i=0; i<10; i++) { myScore=myScore+Quest[i]; }
+  analyzer(myScore);
+}
+myContents = new Array();
+myContents[0] = " Anderen zien jou als een voorbeeldfiguur, en willen graag op jou lijken maar zijn toch echt niet zo goed als dat jij bent,"
+ + " je bent een voorbeeldfiguur voor vele mensen en je bent niet te imiteren,"
+ + " Jij bent dus een echte big mac, onoverwinnelijk en niet te kopieren."; 
+myContents[1] = " Jij bent iemand die van nieuwe avonturen houdt en graag eens iets out of the box probeert,"
+ + " Je bent goed in wat je doet en je doet alles op je eigen manier,"
+ + " Je bent een homestyle crispy chicken honey mustard, anders dan de rest maar o zo goed op je eigen manier.";
+myContents[2] = " Jij bent dat ene vriendelijke persoon die met iedereen vrienden is. Veel mensen vinden jou een van de aardigste personen die ze kennen; "
+ + " ook ben je heel eerlijk en oprecht over je gevoelens. Mensen vinden het heel fijn dat je altijd voor ze klaarstaat,"
+ + " Je bent een kipnugget. Je past precies tussen alle andere nuggets en bent simpel en eerlijk over de samenstelling van je inhoud.";
+myContents[3] = " Jij bent erg voorzichtig, slim en terughoudend. Anderen zien jou als simpel maar kunnen jou niet missen;"
+ + " in stressvolle situaties bewaar jij altijd de rust en vind je je weg er weer uit,"
+ + " Je bent een hamburger. Simpel, maar toch orgineel en een echte klassieker.";
+myContents[4] = "Je bent erg kieskeurig, maar toch voorzichtig in de keuzes die je maakt; "
+ + " Je bent een cheeseburger, voorzichtig maar toch kieskeurig. ";
+myContents[5] = " Jij bent een besluiteloos persoon en hebt vaak moeite met het maken van keuzes, "
+ + " je laat beslissingen liever over aan een ander om niet in conflict met jezelf te komen,"
+ + " Je bent een McFish, je zwemt overal tussenduur en bent niet te ingewikkeld."
+
+    
+function analyzer (myScore) {
+// this function uses the total calculated score to figure out which personality type they are
+  if (myScore>60) { myContentsPtr = 0; }
+  else { if (myScore > 50) { myContentsPtr = 1; }
+    else { if(myScore>40)  { myContentsPtr = 2; } 
+      else { if(myScore>30) { myContentsPtr = 3; }
+        else { if(myScore>20) { myContentsPtr = 4; }
+          else { myContentsPtr = 5; }
+        }
+      }
+    }
+  }
+  myDisplay(myContents[myContentsPtr])
+}
+
+function myDisplay(myContents) {
+//This function will open a new window and show the results calculated
+  alert(myContents);
+}
+    
+
+function saver(q, points) {
+// this function puts the points that each answer is worth into the array
+  q=q-1;
+  Quest[q]=points
+}
+
+</script>
+    
+<center>
+<BODY onLoad="populate()">
+<FORM NAME="personalityForm">
+<span class="style1">Burgertest</span><br>
+
+<img src="https://img.taste.com.au/pvenFcjp/taste/2019/05/mcdonalds-burgers-149837-2.jpg" width="330" height ="244" border ="0"></a>
+    
+    <div class=ondertiteltekst><t>Welke burger past het beste bij jou? Ontdek het met onze handige burgertest!</t></div>
+<br>
+    
+
+<span class="style2">
+
+<span class="style3">1. Wanneer voel je je het beste?</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,2)">in de ochtend<br>
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,4)">einde middag of in de avond<br>
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,6)">laat in de nacht<br>
+</span><br>
+
+<span class="style3">2. Je loopt normaal:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,6)" >vrij snel met grote stappen<br>
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,4)">vrij snel met kleine stappen<br>
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,7)">langzaam met je hoofd richting de lucht<br>
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,2)">langzaam met je hoofd neer<br>
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,1)">heel traag<br>
+</span><br>
+
+<span class="style3">3. Als je met mensen praat dan:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,4)">sta je met je armen over elkaar<br>
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,2)">heb je je handen in elkaar<br>
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,5)">hou je je handen langs je lichaam<br>
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,7)">heb je zin om je gesprekspartner aan te raken<br>
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,6)">zit je met je handen door je haar of aan je eigen gezicht<br>
+</span><br>
+
+<span class="style3">4. Als je relaxed, dan zit je:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,4)">met je knieën naast elkaar<br>
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,6)">met je benen gekruisd<br>
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,2)">met je benen uitgerekt<br>
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,1)">in de kleermakerszit<br>
+</span><br>
+
+<span class="style3">5. Als je iets echt leuk vind, dan reageer je met:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,6)">een harde maar geaccepteerde lach<br>
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,4)">een lach, maar een zachte<br>
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,3)">een lach in jezelf<br>
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,5)">een klein glimlachje<br>
+</span><br>
+
+<span class="style3">6. Op een feestje:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,6)">maak je een luidde entree zodat iedereen weet dat je er bent<br>
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,4)">maak je een zachte entree en zoek je mensen die je kent<br>
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,2)">kom je naar binnen als james bond zodat niemand je door heeft<br>
+</span><br>
+
+<span class="style3"><br>7. Je bent hard aan het werk en word afgeleid, wat doe je?</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,6)">je houdt gelijk een pauze<br>
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,2)">je voelt je geirriteerd<br>
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,4)">je wordt erg boos<br>
+</span><br>
+
+<span class="style3">8. Welke kleuren spreken jou aan?</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,6)" >rood en oranje<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,7)" >zwart<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,5)" >geel en licht-blauw<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,4)" >groen<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,3)" >donker blauw en paars<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,2)" >wit<br>
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,1)" >zwart en grijs<br>
+</span><br>
+
+<span class="style3">9. In welke houding val je meestal in slaap?</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,7)" >op je rug uitgerekt<br>
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,6)" >op je buik uitgerekt<br>
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,4)" >gekruld op je zij<br>
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,2)" >met je hoofd op je arm<br>
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,1)" >met je hoofd onder de dekens<br>
+</span><br>
+
+<span class="style3"><br>10. Je droomt vaak dat je:</span><br>
+<span class="style6">
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,4)" >valt uit de lucht<br>
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,2)" >vecht of moeite hebt ergens mee<br>
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,3)" >iets of iemand zoekt<br>
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,5)" >vliegt of drijft<br>
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,6)" >ik droom nooit<br>
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,1)" >mijn dromen zijn altijd leuk<br>
+ </span><br>
+
+<br>
+<INPUT TYPE="button" NAME="result" Value="Ontdek je burger" onClick="total()">
+<span>
+
+</FORM>
+    
+</center>
+</body>
+    
+
+</html>

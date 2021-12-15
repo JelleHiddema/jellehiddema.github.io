@@ -11,6 +11,7 @@
 </head>
 <body>
     
+
 <a href=site.html><h1><center>McDonald's menurating</center></h1></a>
        
 <ul>
@@ -42,10 +43,25 @@
   </tr>
 </table>
 </center>
+    
+<center>
+<div class="flier">
+  <img src="https://www.pkndevoorhof.nl/sites/default/files/openbaar/foto%20hexspoor_middelklein_320.jpg" />
+</div>
 
 <center>
 <img src='https://www.mcdonalds.com/is/image/content/dam/nl/Menu/Categorypage297/th_SingleBigTastyMenu.jpg?$Category_Desktop$';>
 </center>
     
+<a href="#" class="activate">Release the Niels</a>
+    
+<script>
+  let elem = document.querySelector('.flier')
+let trigger = document.querySelector('.activate')
+trigger.addEventListener('click', function() {
+  elem.classList.toggle('active');
+  trigger.classList.toggle('active');
+})    
+</script>
 </body>
 </html>

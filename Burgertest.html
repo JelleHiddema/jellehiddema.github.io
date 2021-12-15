@@ -12,7 +12,7 @@
 <body>
 
 <a href=site.html><h1><center>McDonald's menurating</center></h1></a>
-       
+      
 <ul>
   <li><a href="site.html">Home</a></li>
   <li><a href="menu.html">Menu</a></li>
@@ -22,19 +22,14 @@
 </ul>
     
 <script language="javascript">
-
-var Quest = new Array(10);  //this sets up an array for all of the answers that are given
+    
+var Quest = new Array(10);
 
 function populate() {
-// alert("function populate started");
-// this function gives each of the answers 0 points so if someone doesn't answer a question
-// the whole thing will continue to work
   for(var i=0; i<10; i++) { Quest[i]=0; }
 }
 
 function total() {
-// alert("function total started");
-// this function adds the number of points each answer is worth together
   myScore=0;
   for (var i=0; i<10; i++) { myScore=myScore+Quest[i]; }
   analyzer(myScore);
@@ -60,7 +55,6 @@ myContents[5] = " Jij bent een besluiteloos persoon en hebt vaak moeite met het 
 
     
 function analyzer (myScore) {
-// this function uses the total calculated score to figure out which personality type they are
   if (myScore>60) { myContentsPtr = 0; }
   else { if (myScore > 50) { myContentsPtr = 1; }
     else { if(myScore>40)  { myContentsPtr = 2; } 
@@ -75,13 +69,11 @@ function analyzer (myScore) {
 }
 
 function myDisplay(myContents) {
-//This function will open a new window and show the results calculated
   alert(myContents);
 }
     
 
 function saver(q, points) {
-// this function puts the points that each answer is worth into the array
   q=q-1;
   Quest[q]=points
 }
